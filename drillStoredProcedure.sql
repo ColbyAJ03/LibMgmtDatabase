@@ -11,8 +11,9 @@ INNER JOIN book AS b
 ON bl.bookID = b.bookID
 INNER JOIN borrower AS bo
 ON bl.cardNO = bo.cardNo
-WHERE bl.dueDate >= @date
-AND bl.dueDate <= @endDate
+WHERE bl.dueDate BETWEEN @date AND @endDate
 ORDER BY bl.dueDate
+
+
 
 
